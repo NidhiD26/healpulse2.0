@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "HopeHub - Support for Cancer Patients",
+  title: "HealPulse - Support for Cancer Patients",
   description: "A supportive community and resource hub for cancer patients and their families",
 }
 

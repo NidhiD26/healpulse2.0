@@ -13,7 +13,7 @@ export default function Footer() {
               <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-bold">H</span>
               </div>
-              <span className="font-bold text-xl">HopeHub</span>
+              <span className="font-bold text-xl">HealPulse</span>
             </div>
             <p className="text-muted-foreground">
               Supporting cancer patients and their families through every step of the journey.
@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} HopeHub. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} HealPulse. All rights reserved.</p>
           <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-muted-foreground hover:text-primary">
               Privacy Policy

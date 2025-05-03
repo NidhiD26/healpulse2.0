@@ -38,7 +38,7 @@ export default function TalkPage() {
     {
       id: 1,
       sender: "system",
-      content: "Welcome to HopeHub Talk. You are now connected with a supportive listener.",
+      content: "Welcome to HealPulse Talk. You are now connected with a supportive listener.",
       timestamp: new Date().toISOString(),
     },
     {
@@ -148,7 +148,7 @@ export default function TalkPage() {
                       </>
                     ) : (
                       <div>
-                        <CardTitle className="text-base">HopeHub Talk</CardTitle>
+                        <CardTitle className="text-base">HealPulse Talk</CardTitle>
                         <CardDescription>Connect with a supportive listener</CardDescription>
                       </div>
                     )}

@@ -30,7 +30,7 @@ export default function Header() {
           <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-bold">H</span>
           </div>
-          <span className="font-bold text-xl">HopeHub</span>
+          <span className="font-bold text-xl">HealPulse</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
