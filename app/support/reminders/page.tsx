@@ -26,9 +26,40 @@ import {
   Droplets,
 } from "lucide-react"
 
+
+type ReminderType = "appointment" | "medication" | "other"
+type RecurrenceType = "once" | "daily" | "weekly" | "monthly"
+
+interface Reminder {
+  id: number
+  title: string
+  date: Date
+  type: ReminderType
+  notes: string
+  notifications: boolean
+  recurrence?: RecurrenceType | null
+}
+
+interface NewReminderForm {
+  title: string
+  date: Date
+  time: string
+  type: ReminderType
+  notes: string
+  recurrence: RecurrenceType
+  notifications: boolean
+}
+
+interface ReminderCardProps {
+  reminder: Reminder
+  onDelete: (id: number) => void
+  getTypeIcon: (type: ReminderType) => React.ReactNode
+  getTypeBadgeColor: (type: ReminderType) => string
+}
+
 export default function RemindersPage() {
-  const [date, setDate] = useState(new Date())
-  const [reminders, setReminders] = useState([
+  const [date, setDate] = useState<Date>(new Date())
+  const [reminders, setReminders] = useState<Reminder[]>([
     {
       id: 1,
       title: "Chemotherapy Session",
@@ -65,8 +96,8 @@ export default function RemindersPage() {
     },
   ])
 
-  const [showAddForm, setShowAddForm] = useState(false)
-  const [newReminder, setNewReminder] = useState({
+  const [showAddForm, setShowAddForm] = useState<boolean>(false)
+  const [newReminder, setNewReminder] = useState<NewReminderForm>({
     title: "",
     date: new Date(),
     time: "12:00",
@@ -77,12 +108,12 @@ export default function RemindersPage() {
   })
 
   const handleAddReminder = () => {
-    // In a real app, this would save to a database
+    
     const [hours, minutes] = newReminder.time.split(":").map(Number)
     const reminderDate = new Date(newReminder.date)
     reminderDate.setHours(hours, minutes)
 
-    const reminder = {
+    const reminder: Reminder = {
       id: reminders.length + 1,
       title: newReminder.title,
       date: reminderDate,
@@ -105,11 +136,11 @@ export default function RemindersPage() {
     })
   }
 
-  const handleDeleteReminder = (id) => {
+  const handleDeleteReminder = (id: number) => {
     setReminders(reminders.filter((reminder) => reminder.id !== id))
   }
 
-  const getTypeIcon = (type) => {
+  const getTypeIcon = (type: ReminderType) => {
     switch (type) {
       case "appointment":
         return <Stethoscope className="h-4 w-4" />
@@ -122,7 +153,7 @@ export default function RemindersPage() {
     }
   }
 
-  const getTypeBadgeColor = (type) => {
+  const getTypeBadgeColor = (type: ReminderType) => {
     switch (type) {
       case "appointment":
         return "bg-primary/10 text-primary border-primary/20"
@@ -193,7 +224,7 @@ export default function RemindersPage() {
                           <Calendar
                             mode="single"
                             selected={newReminder.date}
-                            onSelect={(date) => setNewReminder({ ...newReminder, date })}
+                            onSelect={(date) => date && setNewReminder({ ...newReminder, date })}
                             initialFocus
                           />
                         </PopoverContent>
@@ -214,7 +245,7 @@ export default function RemindersPage() {
                       <Label htmlFor="type">Type</Label>
                       <Select
                         value={newReminder.type}
-                        onValueChange={(value) => setNewReminder({ ...newReminder, type: value })}
+                        onValueChange={(value: ReminderType) => setNewReminder({ ...newReminder, type: value })}
                       >
                         <SelectTrigger id="type">
                           <SelectValue placeholder="Select type" />
@@ -232,7 +263,7 @@ export default function RemindersPage() {
                     <Label htmlFor="recurrence">Recurrence</Label>
                     <Select
                       value={newReminder.recurrence}
-                      onValueChange={(value) => setNewReminder({ ...newReminder, recurrence: value })}
+                      onValueChange={(value: RecurrenceType) => setNewReminder({ ...newReminder, recurrence: value })}
                     >
                       <SelectTrigger id="recurrence">
                         <SelectValue placeholder="Select recurrence" />
@@ -279,7 +310,7 @@ export default function RemindersPage() {
             <div className="space-y-4">
               {reminders
                 .filter((reminder) => reminder.date > new Date())
-                .sort((a, b) => a.date - b.date)
+                .sort((a, b) => a.date.getTime() - b.date.getTime())
                 .map((reminder) => (
                   <ReminderCard
                     key={reminder.id}
@@ -308,7 +339,12 @@ export default function RemindersPage() {
               </CardHeader>
               <CardContent>
                 <div className="flex justify-center">
-                  <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
+                  <Calendar 
+                    mode="single" 
+                    selected={date} 
+                    onSelect={(newDate) => newDate && setDate(newDate)} 
+                    className="rounded-md border" 
+                  />
                 </div>
 
                 <div className="mt-6">
@@ -387,7 +423,7 @@ export default function RemindersPage() {
 
               <div className="space-y-4">
                 {reminders
-                  .sort((a, b) => a.date - b.date)
+                  .sort((a, b) => a.date.getTime() - b.date.getTime())
                   .map((reminder) => (
                     <ReminderCard
                       key={reminder.id}
@@ -457,7 +493,7 @@ export default function RemindersPage() {
   )
 }
 
-function ReminderCard({ reminder, onDelete, getTypeIcon, getTypeBadgeColor }) {
+function ReminderCard({ reminder, onDelete, getTypeIcon, getTypeBadgeColor }: ReminderCardProps) {
   const isPast = reminder.date < new Date()
 
   return (

@@ -13,12 +13,27 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { format } from "date-fns"
 import { Search, CalendarIcon, Video, Phone, Star, MapPin } from "lucide-react"
 
+
+interface Doctor {
+  id: number
+  name: string
+  specialty: string
+  hospital: string
+  rating: number
+  reviews: number
+  image: string
+  location: string
+  availableToday: boolean
+  nextAvailable: string
+  bio: string
+}
+
 export default function DoctorsPage() {
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedDate, setSelectedDate] = useState(null)
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)
   const [selectedSpecialty, setSelectedSpecialty] = useState("")
 
-  const doctors = [
+  const doctors: Doctor[] = [
     {
       id: 1,
       name: "Dr. Sarah Johnson",
@@ -166,7 +181,12 @@ export default function DoctorsPage() {
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0">
-                <Calendar mode="single" selected={selectedDate} onSelect={setSelectedDate} initialFocus />
+                <Calendar 
+                  mode="single" 
+                  selected={selectedDate} 
+                  onSelect={setSelectedDate} 
+                  initialFocus 
+                />
               </PopoverContent>
             </Popover>
           </div>
@@ -191,7 +211,7 @@ export default function DoctorsPage() {
                     onClick={() => {
                       setSearchQuery("")
                       setSelectedSpecialty("")
-                      setSelectedDate(null)
+                      setSelectedDate(undefined)
                     }}
                   >
                     Clear filters
@@ -215,7 +235,7 @@ export default function DoctorsPage() {
                     onClick={() => {
                       setSearchQuery("")
                       setSelectedSpecialty("")
-                      setSelectedDate(null)
+                      setSelectedDate(undefined)
                     }}
                   >
                     Clear filters
@@ -239,7 +259,7 @@ export default function DoctorsPage() {
                     onClick={() => {
                       setSearchQuery("")
                       setSelectedSpecialty("")
-                      setSelectedDate(null)
+                      setSelectedDate(undefined)
                     }}
                   >
                     Clear filters
@@ -294,7 +314,7 @@ export default function DoctorsPage() {
   )
 }
 
-function DoctorCard({ doctor }) {
+function DoctorCard({ doctor }: { doctor: Doctor }) {
   const [showDetails, setShowDetails] = useState(false)
 
   return (
@@ -306,7 +326,7 @@ function DoctorCard({ doctor }) {
             <AvatarFallback>
               {doctor.name
                 .split(" ")
-                .map((n) => n[0])
+                .map((n: string) => n[0])
                 .join("")}
             </AvatarFallback>
           </Avatar>

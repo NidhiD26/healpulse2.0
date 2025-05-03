@@ -9,18 +9,32 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Send, Video, Phone, Mic, MicOff, VideoOff, User, Users } from "lucide-react"
 
+
+interface MessageUser {
+  name: string;
+  avatar: string;
+}
+
+interface Message {
+  id: number;
+  sender: "system" | "self" | "other";
+  content: string;
+  timestamp: string;
+  user?: MessageUser;
+}
+
 export default function TalkPage() {
-  const [activeTab, setActiveTab] = useState("text")
+  const [activeTab, setActiveTab] = useState<string>("text")
   const [message, setMessage] = useState("")
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState<Message[]>([])
   const [isConnected, setIsConnected] = useState(false)
   const [isSearching, setIsSearching] = useState(false)
   const [audioEnabled, setAudioEnabled] = useState(true)
   const [videoEnabled, setVideoEnabled] = useState(true)
-  const messagesEndRef = useRef(null)
+  const messagesEndRef = useRef<HTMLDivElement | null>(null)
 
-  // Sample messages for demonstration
-  const sampleMessages = [
+  
+  const sampleMessages: Message[] = [
     {
       id: 1,
       sender: "system",
@@ -40,20 +54,20 @@ export default function TalkPage() {
   ]
 
   useEffect(() => {
-    // Simulate loading sample messages
+    
     setMessages(sampleMessages)
   }, [])
 
   useEffect(() => {
-    // Scroll to bottom when messages change
+    
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
 
-  const handleSendMessage = (e) => {
+  const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault()
     if (!message.trim()) return
 
-    const newMessage = {
+    const newMessage: Message = {
       id: messages.length + 1,
       sender: "self",
       content: message,
@@ -67,9 +81,9 @@ export default function TalkPage() {
     setMessages([...messages, newMessage])
     setMessage("")
 
-    // Simulate response after a delay
+    
     setTimeout(() => {
-      const responseMessage = {
+      const responseMessage: Message = {
         id: messages.length + 2,
         sender: "other",
         content: "Thank you for sharing that. It takes courage to open up. How has that been affecting you lately?",
@@ -86,7 +100,7 @@ export default function TalkPage() {
   const handleConnect = () => {
     setIsSearching(true)
 
-    // Simulate finding a connection after a delay
+    
     setTimeout(() => {
       setIsSearching(false)
       setIsConnected(true)
@@ -95,7 +109,7 @@ export default function TalkPage() {
 
   const handleDisconnect = () => {
     setIsConnected(false)
-    // Reset messages to initial state
+    
     setMessages(sampleMessages)
   }
 
@@ -110,7 +124,7 @@ export default function TalkPage() {
           </p>
         </div>
 
-        <Tabs defaultValue="text" value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs defaultValue="text" value={activeTab} onValueChange={(value: string) => setActiveTab(value)} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="text">Text Chat</TabsTrigger>
             <TabsTrigger value="video">Video Call</TabsTrigger>
@@ -159,9 +173,9 @@ export default function TalkPage() {
                         <div
                           className={`flex ${msg.sender === "self" ? "flex-row-reverse" : "flex-row"} gap-2 max-w-[80%]`}
                         >
-                          {msg.sender === "other" && (
+                          {msg.sender === "other" && msg.user && (
                             <Avatar className="h-8 w-8">
-                              <AvatarImage src={msg.user.avatar || "/placeholder.svg"} alt={msg.user.name} />
+                              <AvatarImage src={msg.user.avatar} alt={msg.user.name} />
                               <AvatarFallback>{msg.user.name.charAt(0)}</AvatarFallback>
                             </Avatar>
                           )}

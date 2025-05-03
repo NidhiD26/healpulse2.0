@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
@@ -20,14 +20,44 @@ import {
   Sun,
   Sparkles,
 } from "lucide-react"
+import { AudioProvider, useAudio } from "@/content/AudioContext"
 
-export default function MeditationPage() {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [currentTrack, setCurrentTrack] = useState(null)
-  const [volume, setVolume] = useState([70])
-  const [isMuted, setIsMuted] = useState(false)
 
-  const meditationTracks = [
+interface MeditationTrack {
+  id: number;
+  title: string;
+  description: string;
+  duration: string;
+  category: string;
+  image: string;
+  audioSrc?: string; 
+}
+
+interface MeditationCardProps {
+  title: string;
+  description: string;
+  duration: string;
+  icon: React.ReactNode;
+  onPlay: () => void;
+}
+
+function MeditationContent() {
+  
+  const { 
+    currentTracks, 
+    currentTrack, 
+    isPlaying, 
+    playTrack, 
+    pauseTracks, 
+    setVolume 
+  } = useAudio();
+
+  const [volume, setVolumeState] = React.useState([70])
+  const [isMuted, setIsMuted] = React.useState(false)
+  const [selectedTrack, setSelectedTrack] = React.useState<MeditationTrack | null>(null)
+
+  
+  const meditationTracks: MeditationTrack[] = [
     {
       id: 1,
       title: "Guided Healing Meditation",
@@ -35,6 +65,7 @@ export default function MeditationPage() {
       duration: "15:20",
       category: "Guided",
       image: "/placeholder.svg?height=80&width=80",
+      audioSrc: "/meditations/1.mp3"
     },
     {
       id: 2,
@@ -43,6 +74,7 @@ export default function MeditationPage() {
       duration: "20:45",
       category: "Music",
       image: "/placeholder.svg?height=80&width=80",
+      audioSrc: "/meditations/2.mp3"
     },
     {
       id: 3,
@@ -51,6 +83,7 @@ export default function MeditationPage() {
       duration: "30:10",
       category: "Guided",
       image: "/placeholder.svg?height=80&width=80",
+      audioSrc: "/meditations/3.mp3"
     },
     {
       id: 4,
@@ -59,6 +92,7 @@ export default function MeditationPage() {
       duration: "45:00",
       category: "Ambient",
       image: "/placeholder.svg?height=80&width=80",
+      audioSrc: "/meditations/1.mp3"
     },
     {
       id: 5,
@@ -67,6 +101,7 @@ export default function MeditationPage() {
       duration: "10:15",
       category: "Guided",
       image: "/placeholder.svg?height=80&width=80",
+      audioSrc: "/meditations/2.mp3"
     },
     {
       id: 6,
@@ -75,20 +110,44 @@ export default function MeditationPage() {
       duration: "60:00",
       category: "Music",
       image: "/placeholder.svg?height=80&width=80",
+      audioSrc: "/meditations/3.mp3"
     },
   ]
 
-  const playTrack = (track) => {
-    setCurrentTrack(track)
-    setIsPlaying(true)
+  
+  const handlePlayTrack = (track: MeditationTrack) => {
+    if (track.audioSrc) {
+      setSelectedTrack(track)
+      playTrack(track.audioSrc)
+    }
   }
 
+  
   const togglePlay = () => {
-    setIsPlaying(!isPlaying)
+    if (isPlaying && selectedTrack?.audioSrc) {
+      pauseTracks()
+    } else if (selectedTrack?.audioSrc) {
+      playTrack(selectedTrack.audioSrc)
+    }
   }
 
+  
+  const handleVolumeChange = (newVolume: number[]) => {
+    setVolumeState(newVolume)
+    setVolume(newVolume[0] / 100)
+    setIsMuted(newVolume[0] === 0)
+  }
+
+  
   const toggleMute = () => {
-    setIsMuted(!isMuted)
+    if (isMuted) {
+      setVolumeState([volume[0]])
+      setVolume(volume[0] / 100)
+      setIsMuted(false)
+    } else {
+      setVolume(0)
+      setIsMuted(true)
+    }
   }
 
   return (
@@ -124,7 +183,7 @@ export default function MeditationPage() {
                     <CardHeader className="flex flex-row items-center gap-4 pb-2">
                       <div className="w-20 h-20 rounded-md overflow-hidden bg-muted flex-shrink-0">
                         <img
-                          src={track.image || "/placeholder.svg"}
+                          src={track.image}
                           alt={track.title}
                           className="w-full h-full object-cover"
                         />
@@ -144,7 +203,12 @@ export default function MeditationPage() {
                       </div>
                     </CardHeader>
                     <CardFooter className="pt-0">
-                      <Button variant="outline" size="sm" className="w-full" onClick={() => playTrack(track)}>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full" 
+                        onClick={() => handlePlayTrack(track)}
+                      >
                         <Play className="h-4 w-4 mr-2" />
                         Play
                       </Button>
@@ -153,20 +217,25 @@ export default function MeditationPage() {
                 ))}
               </div>
 
-              {currentTrack && (
+              {/* Use Track component as an alternative:
+              {meditationTracks.map((track) => 
+                track.audioSrc && <Track key={track.id} track={track.audioSrc} />
+              )} */}
+
+              {selectedTrack && (
                 <Card className="border-none shadow-md bg-primary/5 sticky bottom-0">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-md overflow-hidden bg-muted flex-shrink-0">
                         <img
-                          src={currentTrack.image || "/placeholder.svg"}
-                          alt={currentTrack.title}
+                          src={selectedTrack.image}
+                          alt={selectedTrack.title}
                           className="w-full h-full object-cover"
                         />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-medium text-sm">{currentTrack.title}</h3>
-                        <p className="text-xs text-muted-foreground">{currentTrack.category}</p>
+                        <h3 className="font-medium text-sm">{selectedTrack.title}</h3>
+                        <p className="text-xs text-muted-foreground">{selectedTrack.category}</p>
                       </div>
                       <div className="flex items-center gap-2">
                         <Button variant="ghost" size="icon">
@@ -183,7 +252,13 @@ export default function MeditationPage() {
                         <Button variant="ghost" size="icon" onClick={toggleMute}>
                           {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
                         </Button>
-                        <Slider value={volume} max={100} step={1} className="w-full" onValueChange={setVolume} />
+                        <Slider 
+                          value={volume} 
+                          max={100} 
+                          step={1} 
+                          className="w-full" 
+                          onValueChange={handleVolumeChange} 
+                        />
                       </div>
                     </div>
                   </CardContent>
@@ -210,14 +285,14 @@ export default function MeditationPage() {
                         description="A gentle meditation to connect with your body and promote healing"
                         duration="12:30"
                         icon={<Sparkles className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/body-scan.mp3")}
                       />
                       <MeditationCard
                         title="Loving-Kindness Meditation"
                         description="Cultivate compassion for yourself and others during your journey"
                         duration="15:45"
                         icon={<Heart className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/loving-kindness.mp3")}
                       />
                     </div>
                   </div>
@@ -230,14 +305,14 @@ export default function MeditationPage() {
                         description="Gentle guidance to help you fall asleep peacefully"
                         duration="20:15"
                         icon={<Moon className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/sleep-prep.mp3")}
                       />
                       <MeditationCard
                         title="Deep Relaxation"
                         description="Release tension and find deep relaxation"
                         duration="18:30"
                         icon={<Sun className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/deep-relaxation.mp3")}
                       />
                     </div>
                   </div>
@@ -264,14 +339,14 @@ export default function MeditationPage() {
                         description="Known as the 'Miracle Tone' for transformation and healing"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/528hz.mp3")}
                       />
                       <MeditationCard
                         title="432Hz Relaxation"
                         description="Calming frequency that resonates with the heart chakra"
                         duration="45:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/432hz.mp3")}
                       />
                     </div>
                   </div>
@@ -284,14 +359,14 @@ export default function MeditationPage() {
                         description="Gentle rain sounds in a peaceful forest setting"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/forest-rain.mp3")}
                       />
                       <MeditationCard
                         title="Ocean Waves"
                         description="Rhythmic ocean waves for deep relaxation"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/ocean-waves.mp3")}
                       />
                     </div>
                   </div>
@@ -316,14 +391,14 @@ export default function MeditationPage() {
                         description="Gentle guidance to prepare your body and mind for sleep"
                         duration="25:00"
                         icon={<Moon className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/bedtime.mp3")}
                       />
                       <MeditationCard
                         title="Sleep Story: Peaceful Garden"
                         description="A calming story to help you drift off to sleep"
                         duration="30:15"
                         icon={<Moon className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/sleep-story.mp3")}
                       />
                     </div>
                   </div>
@@ -336,14 +411,14 @@ export default function MeditationPage() {
                         description="Soft rainfall sounds for relaxation and sleep"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/gentle-rain.mp3")}
                       />
                       <MeditationCard
                         title="White Noise"
                         description="Consistent sound to mask disturbances and promote sleep"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => {}}
+                        onPlay={() => playTrack("/meditations/white-noise.mp3")}
                       />
                     </div>
                   </div>
@@ -407,7 +482,8 @@ export default function MeditationPage() {
   )
 }
 
-function MeditationCard({ title, description, duration, icon, onPlay }) {
+
+function MeditationCard({ title, description, duration, icon, onPlay }: MeditationCardProps) {
   return (
     <Card className="border shadow-sm">
       <CardHeader className="pb-2">
@@ -430,5 +506,14 @@ function MeditationCard({ title, description, duration, icon, onPlay }) {
         </Button>
       </CardFooter>
     </Card>
+  )
+}
+
+
+export default function MeditationPage() {
+  return (
+    <AudioProvider>
+      <MeditationContent />
+    </AudioProvider>
   )
 }
