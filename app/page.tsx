@@ -22,6 +22,7 @@ import {
 } from "lucide-react"
 import TestimonialSection from "@/components/testimonial-section"
 import AffirmationSection from "@/components/affirmation-section"
+import ImmunotherapySection from "@/components/ImmunotherapySection"
 
 export default function Home() {
   return (
@@ -79,6 +80,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ImmunotherapySection />
 
       <section className="py-16 md:py-24 items-center flex justify-center">
         <div className="container px-4 md:px-6">
