@@ -24,7 +24,7 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 items-center flex justify-center">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur p-2 supports-[backdrop-filter]:bg-background/60 grid place-items-center">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
