@@ -20,9 +20,8 @@ export default function AffirmationSection() {
     "Healing happens one moment at a time. Celebrate each small victory.",
     "You have overcome difficult days before, and you will overcome this too.",
     "Your journey matters. Your story matters. You matter.",
-    "I can and i will overcome this"
-    "No matter how hard it gets, I will keep fighting"
-
+    "I can and i will overcome this",
+    "No matter how hard it gets, I will keep fighting",
   ]
 
   useEffect(() => {
