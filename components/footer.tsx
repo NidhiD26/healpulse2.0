@@ -19,7 +19,7 @@ export default function Footer() {
               Supporting cancer patients and their families through every step of the journey.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">
+              {/* <Link href="#" className="text-muted-foreground hover:text-primary">
                 <Facebook size={20} />
                 <span className="sr-only">Facebook</span>
               </Link>
@@ -34,7 +34,7 @@ export default function Footer() {
               <Link href="#" className="text-muted-foreground hover:text-primary">
                 <Youtube size={20} />
                 <span className="sr-only">YouTube</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -57,14 +57,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/resources/guides" className="text-muted-foreground hover:text-primary">
+                {/* <Link href="/resources/guides" className="text-muted-foreground hover:text-primary">
                   Treatment Guides
-                </Link>
+                </Link> */}
               </li>
               <li>
-                <Link href="/resources/books" className="text-muted-foreground hover:text-primary">
+                {/* <Link href="/resources/books" className="text-muted-foreground hover:text-primary">
                   Recommended Books
-                </Link>
+                </Link> */}
               </li>
             </ul>
           </div>
@@ -78,14 +78,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/community/stories" className="text-muted-foreground hover:text-primary">
+                {/* <Link href="/community/stories" className="text-muted-foreground hover:text-primary">
                   Survivor Stories
-                </Link>
+                </Link> */}
               </li>
               <li>
-                <Link href="/community/social" className="text-muted-foreground hover:text-primary">
+                {/* <Link href="/community/social" className="text-muted-foreground hover:text-primary">
                   Social Network
-                </Link>
+                </Link> */}
               </li>
               <li>
                 <Link href="/community/donate" className="text-muted-foreground hover:text-primary">
@@ -103,10 +103,10 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Stay Inspired</h3>
             <p className="text-muted-foreground">Subscribe for daily affirmations and updates</p>
-            <div className="flex gap-2">
-              <Input type="email" placeholder="Your email" />
+            <form action="https://formsubmit.co/dineshnidhi2605@gmail.com" method="POST" className="flex gap-2">
+              <Input type="email" placeholder="Your email" id="email" name="email" />
               <Button type="submit">Subscribe</Button>
-            </div>
+            </form>
           </div>
         </div>
 
