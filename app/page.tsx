@@ -42,15 +42,15 @@ export default function Home() {
                   A supportive community and comprehensive resource hub for cancer patients and their families.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
+              {/* <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="font-medium">
                   Join Our Community
                 </Button>
                 <Button size="lg" variant="outline" className="font-medium">
                   Talk to Someone Now
                 </Button>
-              </div>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              </div> */}
+              {/* <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Users size={16} />
                   <span>10,000+ Members</span>
@@ -63,13 +63,13 @@ export default function Home() {
                   <Stethoscope size={16} />
                   <span>Expert Guidance</span>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="relative">
               <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-primary to-accent blur-md opacity-30"></div>
               <div className="relative rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/images/hero.png"
                   alt="Cancer support community"
                   width={800}
                   height={600}
@@ -99,12 +99,12 @@ export default function Home() {
               description="Connect with others who understand your journey through our secure chat platform."
               link="/community/talk"
             />
-            <FeatureCard
+            {/* <FeatureCard
               icon={<Sparkles className="h-10 w-10 text-primary" />}
               title="Daily Affirmations"
               description="Receive positive affirmations and manifestations to keep you motivated."
               link="/resources/affirmations"
-            />
+            /> */}
             <FeatureCard
               icon={<Bell className="h-10 w-10 text-primary" />}
               title="Helpful Reminders"
@@ -123,30 +123,30 @@ export default function Home() {
               description="Explore healing music and guided meditation sessions for relaxation."
               link="/resources/meditation"
             />
-            <FeatureCard
+            {/* <FeatureCard
               icon={<Video className="h-10 w-10 text-primary" />}
               title="Survivor Stories"
               description="Watch motivational videos and read stories from cancer survivors."
               link="/community/stories"
-            />
-            <FeatureCard
+            /> */}
+            {/* <FeatureCard
               icon={<Stethoscope className="h-10 w-10 text-primary" />}
               title="Connect with Doctors"
               description="Schedule consultations with oncologists and healthcare specialists."
               link="/support/doctors"
-            />
+            /> */}
             <FeatureCard
               icon={<Scissors className="h-10 w-10 text-primary" />}
               title="Donate Hair"
               description="Learn how to donate hair for wigs and support other cancer patients."
               link="/community/donate"
             />
-            <FeatureCard
+            {/* <FeatureCard
               icon={<BookMarked className="h-10 w-10 text-primary" />}
               title="Resource Library"
               description="Access books, guides, and educational materials about cancer treatment."
               link="/resources/books"
-            />
+            /> */}
           </div>
         </div>
       </section>
@@ -161,7 +161,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="overflow-hidden rounded-lg">
                     <Image
-                      src="/placeholder.svg?height=300&width=300"
+                      src="/images/img4.png"
                       alt="Community member"
                       width={300}
                       height={300}
@@ -170,7 +170,7 @@ export default function Home() {
                   </div>
                   <div className="overflow-hidden rounded-lg">
                     <Image
-                      src="/placeholder.svg?height=300&width=300"
+                      src="/images/img1.png"
                       alt="Support group"
                       width={300}
                       height={300}
@@ -181,7 +181,7 @@ export default function Home() {
                 <div className="space-y-4 mt-6">
                   <div className="overflow-hidden rounded-lg">
                     <Image
-                      src="/placeholder.svg?height=300&width=300"
+                      src="/images/img2.png"
                       alt="Online chat"
                       width={300}
                       height={300}
@@ -190,7 +190,7 @@ export default function Home() {
                   </div>
                   <div className="overflow-hidden rounded-lg">
                     <Image
-                      src="/placeholder.svg?height=300&width=300"
+                      src="/images/img3.png"
                       alt="Social connection"
                       width={300}
                       height={300}
@@ -277,19 +277,19 @@ export default function Home() {
               description="Curated playlists and guided meditation sessions to promote relaxation and healing."
               link="/resources/meditation"
             />
-            <ResourceCard
+            {/* <ResourceCard
               icon={<Wind className="h-6 w-6 text-primary" />}
               title="Breathing Exercises"
               description="Learn techniques to manage anxiety, improve sleep, and enhance overall wellbeing."
               link="/resources/breathing"
-            />
+            /> */}
             <ResourceCard
               icon={<Activity className="h-6 w-6 text-primary" />}
               title="Gentle Exercises"
               description="Safe, low-impact exercises designed specifically for cancer patients at various stages."
               link="/resources/exercises"
             />
-            <ResourceCard
+            {/* <ResourceCard
               icon={<BookOpen className="h-6 w-6 text-primary" />}
               title="Treatment Guides"
               description="Comprehensive information about chemotherapy, radiation, and other cancer treatments."
@@ -300,7 +300,7 @@ export default function Home() {
               title="Family Support"
               description="Resources for family members and caregivers to effectively support their loved ones."
               link="/support/family"
-            />
+            /> */}
           </div>
         </div>
       </section>
@@ -336,7 +336,7 @@ export default function Home() {
               <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-primary to-accent blur-md opacity-30"></div>
               <div className="relative rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/images/img5.png"
                   alt="Support community"
                   width={600}
                   height={400}
