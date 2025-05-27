@@ -65,7 +65,7 @@ function MeditationContent() {
       duration: "15:20",
       category: "Guided",
       image: "/placeholder.svg?height=80&width=80",
-      audioSrc: "/meditations/1.mp3"
+      audioSrc: "/meditation/Guided Healing Meditation.mp3"
     },
     {
       id: 2,
@@ -74,7 +74,7 @@ function MeditationContent() {
       duration: "20:45",
       category: "Music",
       image: "/placeholder.svg?height=80&width=80",
-      audioSrc: "/meditations/2.mp3"
+      audioSrc: "/meditation/Deep Relaxation Music.mp3"
     },
     {
       id: 3,
@@ -83,7 +83,7 @@ function MeditationContent() {
       duration: "30:10",
       category: "Guided",
       image: "/placeholder.svg?height=80&width=80",
-      audioSrc: "/meditations/3.mp3"
+      audioSrc: "/meditation/Sleep Meditation.mp3"
     },
     {
       id: 4,
@@ -92,7 +92,7 @@ function MeditationContent() {
       duration: "45:00",
       category: "Ambient",
       image: "/placeholder.svg?height=80&width=80",
-      audioSrc: "/meditations/1.mp3"
+      audioSrc: "/meditation/Nature Sounds.mp3"
     },
     {
       id: 5,
@@ -101,7 +101,7 @@ function MeditationContent() {
       duration: "10:15",
       category: "Guided",
       image: "/placeholder.svg?height=80&width=80",
-      audioSrc: "/meditations/2.mp3"
+      audioSrc: "/meditation/Breathing Exercise.mp3"
     },
     {
       id: 6,
@@ -110,7 +110,7 @@ function MeditationContent() {
       duration: "60:00",
       category: "Music",
       image: "/placeholder.svg?height=80&width=80",
-      audioSrc: "/meditations/3.mp3"
+      audioSrc: "/meditation/Healing Frequencies.mp3"
     },
   ]
 
@@ -156,7 +156,7 @@ function MeditationContent() {
         <div className="mb-8 space-y-2">
           <h1 className="text-3xl font-bold">Meditation & Healing Music</h1>
           <p className="text-muted-foreground">
-            Discover guided meditations and healing music to support your mental wellbeing during your cancer journey.
+            Discover guided meditation and healing music to support your mental wellbeing during your cancer journey.
           </p>
         </div>
 
@@ -270,29 +270,29 @@ function MeditationContent() {
           <TabsContent value="guided" className="mt-6">
             <Card className="border-none shadow-md mb-6">
               <CardHeader>
-                <CardTitle>Guided Meditations for Cancer Patients</CardTitle>
+                <CardTitle>Guided meditation for Cancer Patients</CardTitle>
                 <CardDescription>
-                  Specialized meditations to support healing, reduce anxiety, and improve sleep
+                  Specialized meditation to support healing, reduce anxiety, and improve sleep
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-3">Healing Meditations</h3>
+                    <h3 className="text-lg font-semibold mb-3">Healing meditation</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <MeditationCard
                         title="Body Scan for Healing"
                         description="A gentle meditation to connect with your body and promote healing"
                         duration="12:30"
                         icon={<Sparkles className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/body-scan.mp3")}
+                        onPlay={() => playTrack("/meditation/Body Scan for Healing.mp3")}
                       />
                       <MeditationCard
                         title="Loving-Kindness Meditation"
                         description="Cultivate compassion for yourself and others during your journey"
                         duration="15:45"
                         icon={<Heart className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/loving-kindness.mp3")}
+                        onPlay={() => playTrack("/meditation/Loving-Kindness Meditation.mp3")}
                       />
                     </div>
                   </div>
@@ -305,14 +305,14 @@ function MeditationContent() {
                         description="Gentle guidance to help you fall asleep peacefully"
                         duration="20:15"
                         icon={<Moon className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/sleep-prep.mp3")}
+                        onPlay={() => playTrack("/meditation/Sleep Preparation.mp3")}
                       />
                       <MeditationCard
                         title="Deep Relaxation"
                         description="Release tension and find deep relaxation"
                         duration="18:30"
                         icon={<Sun className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/deep-relaxation.mp3")}
+                        onPlay={() => playTrack("/meditation/Deep Relaxation.mp3")}
                       />
                     </div>
                   </div>
@@ -339,14 +339,14 @@ function MeditationContent() {
                         description="Known as the 'Miracle Tone' for transformation and healing"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/528hz.mp3")}
+                        onPlay={() => playTrack("/meditation/528Hz Healing Frequency.mp3")}
                       />
                       <MeditationCard
                         title="432Hz Relaxation"
                         description="Calming frequency that resonates with the heart chakra"
                         duration="45:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/432hz.mp3")}
+                        onPlay={() => playTrack("/meditation/432Hz Relaxation.mp3")}
                       />
                     </div>
                   </div>
@@ -359,14 +359,14 @@ function MeditationContent() {
                         description="Gentle rain sounds in a peaceful forest setting"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/forest-rain.mp3")}
+                        onPlay={() => playTrack("/meditation/Forest Rainfall.mp3")}
                       />
                       <MeditationCard
                         title="Ocean Waves"
                         description="Rhythmic ocean waves for deep relaxation"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/ocean-waves.mp3")}
+                        onPlay={() => playTrack("/meditation/Ocean Waves.mp3")}
                       />
                     </div>
                   </div>
@@ -379,26 +379,26 @@ function MeditationContent() {
             <Card className="border-none shadow-md mb-6">
               <CardHeader>
                 <CardTitle>Sleep & Relaxation</CardTitle>
-                <CardDescription>Meditations and sounds to help you relax and get better sleep</CardDescription>
+                <CardDescription>meditation and sounds to help you relax and get better sleep</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-3">Sleep Meditations</h3>
+                    <h3 className="text-lg font-semibold mb-3">Sleep meditation</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <MeditationCard
                         title="Bedtime Relaxation"
                         description="Gentle guidance to prepare your body and mind for sleep"
                         duration="25:00"
                         icon={<Moon className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/bedtime.mp3")}
+                        onPlay={() => playTrack("/meditation/Bedtime Relaxation.mp3")}
                       />
                       <MeditationCard
                         title="Sleep Story: Peaceful Garden"
                         description="A calming story to help you drift off to sleep"
                         duration="30:15"
                         icon={<Moon className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/sleep-story.mp3")}
+                        onPlay={() => playTrack("/meditation/Sleep Story Peaceful Garden.mp3")}
                       />
                     </div>
                   </div>
@@ -411,14 +411,14 @@ function MeditationContent() {
                         description="Soft rainfall sounds for relaxation and sleep"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/gentle-rain.mp3")}
+                        onPlay={() => playTrack("/meditation/Gentle Rain.mp3")}
                       />
                       <MeditationCard
                         title="White Noise"
                         description="Consistent sound to mask disturbances and promote sleep"
                         duration="60:00"
                         icon={<Music className="h-5 w-5 text-primary" />}
-                        onPlay={() => playTrack("/meditations/white-noise.mp3")}
+                        onPlay={() => playTrack("/meditation/White Noise.mp3")}
                       />
                     </div>
                   </div>
