@@ -34,7 +34,7 @@ export default function DonatePage() {
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="relative rounded-lg overflow-hidden">
                     <Image
-                      src="/placeholder.svg?height=300&width=400"
+                      src="/images/hair1.png"
                       alt="Hair donation"
                       width={400}
                       height={300}
@@ -235,7 +235,7 @@ export default function DonatePage() {
 
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-muted-foreground">24231 Center Ridge Road, Westlake, OH 44145</span>
+                        <span className="text-muted-foreground">Rayat Research Center, Workspace 2, Sector 11, Kharghar, Navi Mumbai, Maharashtra 410210, Mumbai 410210</span>
                       </div>
 
                       <div className="bg-muted/30 p-3 rounded-md text-sm text-muted-foreground">
@@ -273,7 +273,7 @@ export default function DonatePage() {
 
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-muted-foreground">12776 S. Dixie Hwy, South Rockwood, MI 48179</span>
+                        <span className="text-muted-foreground">Rayat Research Center, Workspace 2, Sector 11, Kharghar, Navi Mumbai, Maharashtra 410210, Mumbai 410210</span>
                       </div>
 
                       <div className="bg-muted/30 p-3 rounded-md text-sm text-muted-foreground">
@@ -313,7 +313,7 @@ export default function DonatePage() {
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-muted-foreground" />
                         <span className="text-muted-foreground">
-                          3 Expressway Plaza, Suite 200, Roslyn Heights, NY 11577
+                          Rayat Research Center, Workspace 2, Sector 11, Kharghar, Navi Mumbai, Maharashtra 410210, Mumbai 410210
                         </span>
                       </div>
 
@@ -412,7 +412,7 @@ export default function DonatePage() {
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="relative rounded-lg overflow-hidden">
                     <Image
-                      src="/placeholder.svg?height=300&width=400"
+                      src="/images/hair2.png"
                       alt="Hair donor before and after"
                       width={400}
                       height={300}
@@ -481,7 +481,7 @@ export default function DonatePage() {
 
                     <div className="relative rounded-lg overflow-hidden order-1 md:order-2">
                       <Image
-                        src="/placeholder.svg?height=300&width=400"
+                        src="/images/hair3.png"
                         alt="Male hair donor before and after"
                         width={400}
                         height={300}
@@ -495,7 +495,7 @@ export default function DonatePage() {
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="relative rounded-lg overflow-hidden">
                       <Image
-                        src="/placeholder.svg?height=300&width=400"
+                        src="/images/hair4.png"
                         alt="Child hair donor"
                         width={400}
                         height={300}
