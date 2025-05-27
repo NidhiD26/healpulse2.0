@@ -18,6 +18,7 @@ import {
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
 import { useRouter } from 'next/navigation';
+import Image from "next/image"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -28,7 +29,13 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold">H</span>
+            <span className="text-primary-foreground font-bold"><Image
+                              src="/images/logo.jpg"
+                              alt="Cancer support community"
+                              width={800}
+                              height={600}
+                              className="w-full h-auto object-cover rounded-lg"
+                            /></span>
           </div>
           <span className="font-bold text-xl">HealPulse</span>
         </Link>
@@ -49,9 +56,9 @@ export default function Header() {
                     <ListItem href="/resources/exercises" title="Exercises">
                       Gentle exercises and breathing techniques
                     </ListItem>
-                    <ListItem href="/resources/guides" title="Guides">
+                    {/* <ListItem href="/resources/guides" title="Guides">
                       Information about chemotherapy and treatments
-                    </ListItem>
+                    </ListItem> */}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -62,12 +69,12 @@ export default function Header() {
                     <ListItem href="/community/talk" title="Talk to Someone">
                       Connect with others who understand your journey
                     </ListItem>
-                    <ListItem href="/community/stories" title="Survivor Stories">
+                    {/* <ListItem href="/community/stories" title="Survivor Stories">
                       Read inspiring stories from cancer survivors
                     </ListItem>
                     <ListItem href="/community/social" title="Social Network">
                       Join our supportive social network
-                    </ListItem>
+                    </ListItem> */}
                     <ListItem href="/community/donate" title="Donate Hair">
                       Learn how to donate hair for cancer patients
                     </ListItem>
@@ -103,7 +110,7 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
             <ModeToggle />
-            <Button>Sign In</Button>
+            {/* <Button>Sign In</Button> */}
           </div>
         </div>
 
@@ -130,7 +137,7 @@ export default function Header() {
             <Link href="/blog" className="px-2 py-1 hover:text-primary">
               Blog
             </Link>
-            <Button className="w-full">Sign In</Button>
+            {/* <Button className="w-full">Sign In</Button> */}
           </nav>
         </div>
       )}
