@@ -23,16 +23,14 @@ const ImmunotherapySection: React.FC = () => {
                     <div className="my-6 mx-auto h-1 w-20 bg-purple-500 rounded-full" />
 
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                        Inventing the Next Wave in Immunotherapy
+                        Where hope meets healing <br/>
+                        Empowering your journey, one pulse at a time
                     </h2>
 
                     <p className="text-lg md:text-xl font-normal">
-                        Breakthrough science has given researchers, clinicians, and
-                        patients new hope in the fight against cancer. With recent
-                        discoveries in immunotherapy treatments and an increased
-                        understanding of the immune system’s role in fighting disease, we
-                        are closer than ever before to transforming all cancers into
-                        curable diseases.
+                       Welcome to HealPulse – Your Compassionate Companion in the Cancer Journey<br/>
+
+At HealPulse, we believe healing goes beyond medicine. Our platform offers emotional support through guided communities and counseling, personalized nutrition charts to nourish your body, and smart reminders for medications and appointments. Daily affirmations and manifestation guides help uplift your spirit, while wellness trackers empower you to take control of your health. Together, we pulse with hope, strength, and resilience—because every step forward matters. 💜
                     </p>
                 </div>
             </div>
