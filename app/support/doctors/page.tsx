@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { format } from "date-fns"
-import { Search, CalendarIcon, Video, Phone, Star, MapPin } from "lucide-react"
+import { Search, CalendarIcon, Video, Phone, Star, MapPin } from "lucide-react" 
 
 
 interface Doctor {
