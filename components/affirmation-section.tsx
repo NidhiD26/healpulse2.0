@@ -22,6 +22,16 @@ export default function AffirmationSection() {
     "Your journey matters. Your story matters. You matter.",
     "I can and i will overcome this",
     "No matter how hard it gets, I will keep fighting",
+    "I am more than my diagnosis. I am strong, resilient, and thriving.",
+    "Each day is a gift, and I choose to live it with purpose and gratitude.",
+    "My scars are symbols of my strength and survival.",
+    "I honor my body for carrying me through the hardest times.",
+    "Healing is a journey, and I am walking it with courage and grace.",
+    "I allow myself to feel joy, peace, and hope again.",
+    "I am surrounded by love, and I deserve support and care.",
+    "I trust my body and mind to continue healing each day.",
+    "I’ve faced fear and found my inner warrior.",
+    "My future is bright, and I welcome it with open arms.",
   ]
 
   useEffect(() => {
