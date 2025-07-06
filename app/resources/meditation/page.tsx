@@ -64,7 +64,7 @@ function MeditationContent() {
       description: "A gentle meditation focused on healing and recovery",
       duration: "15:20",
       category: "Guided",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/images/healing/guided healing meditation.jpg",
       audioSrc: "/meditation/Guided Healing Meditation.mp3"
     },
     {
@@ -73,7 +73,7 @@ function MeditationContent() {
       description: "Calming sounds to help you relax and reduce stress",
       duration: "20:45",
       category: "Music",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/images/healing/sleep.jpeg",
       audioSrc: "/meditation/Deep Relaxation Music.mp3"
     },
     {
@@ -82,7 +82,7 @@ function MeditationContent() {
       description: "Gentle guidance to help you fall asleep peacefully",
       duration: "30:10",
       category: "Guided",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/images/healing/sleep1.jpg",
       audioSrc: "/meditation/Sleep Meditation.mp3"
     },
     {
@@ -91,7 +91,7 @@ function MeditationContent() {
       description: "Peaceful forest and water sounds for relaxation",
       duration: "45:00",
       category: "Ambient",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/images/healing/nature.jpeg",
       audioSrc: "/meditation/Nature Sounds.mp3"
     },
     {
@@ -100,7 +100,7 @@ function MeditationContent() {
       description: "Guided breathing techniques to reduce anxiety",
       duration: "10:15",
       category: "Guided",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/images/healing/breathe.jpg",
       audioSrc: "/meditation/Breathing Exercise.mp3"
     },
     {
@@ -109,7 +109,7 @@ function MeditationContent() {
       description: "528Hz frequency music for healing and restoration",
       duration: "60:00",
       category: "Music",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/images/healing/heal.jpeg",
       audioSrc: "/meditation/Healing Frequencies.mp3"
     },
   ]
