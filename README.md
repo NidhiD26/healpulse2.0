@@ -57,4 +57,7 @@ npm run dev
 This project is licensed under the **Apache License 2.0** — see the[LICENSE](./LICENSE) file for details.
 
 
+## 🤝 Code of Conduct
+
+Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to understand how we work together respectfully.
 
