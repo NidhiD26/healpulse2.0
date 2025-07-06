@@ -189,7 +189,7 @@ export default function ExercisesPage() {
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-2">
+                {/* <div className="flex justify-end gap-2">
                   <Button variant="outline" size="sm" className="gap-1">
                     <Printer className="h-4 w-4" />
                     Print
@@ -202,7 +202,7 @@ export default function ExercisesPage() {
                     <Share2 className="h-4 w-4" />
                     Share
                   </Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </TabsContent>
@@ -602,7 +602,7 @@ export default function ExercisesPage() {
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-2">
+                {/* <div className="flex justify-end gap-2">
                   <Button variant="outline" size="sm" className="gap-1">
                     <Printer className="h-4 w-4" />
                     Print
@@ -615,7 +615,7 @@ export default function ExercisesPage() {
                     <Share2 className="h-4 w-4" />
                     Share
                   </Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </TabsContent>
