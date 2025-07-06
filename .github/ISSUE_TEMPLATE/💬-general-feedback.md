@@ -1,4 +1,4 @@
----
+<!-- ---
 name: "\U0001F4AC General Feedback"
 about: Share thoughts, design suggestions, or user feedback
 title: ''
@@ -19,3 +19,51 @@ Have an idea for improvement? We'd love to hear it!
 
 We'd love to hear your thoughts on HealPulse!
 📝 [Click here to share your feedback or feature ideas](https://forms.gle/QCL9vDrJ9TzQyS5T8)
+
+ -->
+name: "💬 General Feedback"
+description: Share thoughts, design suggestions, or user feedback for HealPulse
+title: "[Feedback] "
+labels: ["feedback"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧠 Your Feedback
+
+        Let us know what you think of the site, the content, or anything else.
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: General Feedback
+      description: What do you like, or what could be improved?
+      placeholder: e.g., The meditation player UI feels smooth, but the hamburger menu is buggy on mobile.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Suggestions
+
+        Have an idea for improvement? We'd love to hear it!
+
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Feature or Design Suggestions
+      description: Suggest a feature, improvement, or idea you'd like to see implemented.
+      placeholder: e.g., Add a daily affirmation quote on the homepage.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 💬 Share Feedback or Ideas
+
+        We'd love to hear your thoughts on HealPulse!  
+        📝 [Click here to share your feedback or feature ideas](https://forms.gle/QCL9vDrJ9TzQyS5T8)
