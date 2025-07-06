@@ -532,7 +532,7 @@ export default function DonatePage() {
                   </div>
                 </div>
 
-                <div className="bg-muted/30 p-6 rounded-lg">
+                {/* <div className="bg-muted/30 p-6 rounded-lg">
                   <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                     <Heart className="h-5 w-5 text-primary" />
                     Share Your Story
@@ -542,7 +542,7 @@ export default function DonatePage() {
                     inspire others.
                   </p>
                   <Button>Submit Your Story</Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </TabsContent>
