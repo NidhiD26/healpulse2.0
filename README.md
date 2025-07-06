@@ -33,8 +33,6 @@ This platform was created with empathy and simplicity at its core — empowering
 
 
 
----
-
 ## 🚀 Getting Started
 
 To run the project locally:
