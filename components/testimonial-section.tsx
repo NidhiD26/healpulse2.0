@@ -9,21 +9,21 @@ export default function TestimonialSection() {
         "This platform has been my lifeline during treatment. The meditation resources and community support made all the difference in my journey.",
       name: "Sarah J.",
       role: "Breast Cancer Survivor",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/images/healing/sarah.webp?height=100&width=100",
     },
     {
       quote:
         "The nutrition guides helped me maintain my strength during chemo. And connecting with others who understood exactly what I was going through was invaluable.",
       name: "Michael T.",
       role: "Lymphoma Survivor",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/images/blog/michael chen.jpeg?height=100&width=100",
     },
     {
       quote:
         "As a caregiver for my mother, the family support resources taught me how to be there for her in ways I wouldn't have known otherwise.",
       name: "Priya K.",
-      role: "Family Caregiver",
-      avatar: "/placeholder.svg?height=100&width=100",
+      role: "Caregiver",
+      avatar: "/images/blog/priya.jpg?height=100&width=100",
     },
   ]
 
