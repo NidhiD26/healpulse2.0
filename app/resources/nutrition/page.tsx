@@ -83,7 +83,7 @@ export default function NutritionPage() {
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-2 mt-4">
+                {/* <div className="flex justify-end gap-2 mt-4">
                   <Button variant="outline" size="sm" className="gap-1">
                     <Printer className="h-4 w-4" />
                     Print
@@ -96,7 +96,7 @@ export default function NutritionPage() {
                     <Share2 className="h-4 w-4" />
                     Share
                   </Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
 
@@ -583,9 +583,9 @@ export default function NutritionPage() {
                   </Card>
                 </div>
 
-                <div className="mt-6 text-center">
+                {/* <div className="mt-6 text-center">
                   <Button>View More Recipes</Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </TabsContent>
