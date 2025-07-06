@@ -93,12 +93,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <FeatureCard
+            {/* <FeatureCard
               icon={<MessageCircle className="h-10 w-10 text-primary" />}
               title="Talk to Someone"
               description="Connect with others who understand your journey through our secure chat platform."
               link="/community/talk"
-            />
+            /> */}
             {/* <FeatureCard
               icon={<Sparkles className="h-10 w-10 text-primary" />}
               title="Daily Affirmations"
@@ -178,7 +178,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div className="space-y-4 mt-6">
+                {/* <div className="space-y-4 mt-6">
                   <div className="overflow-hidden rounded-lg">
                     <Image
                       src="/images/img2.png"
@@ -197,7 +197,7 @@ export default function Home() {
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="space-y-6 order-1 lg:order-2">
@@ -207,7 +207,7 @@ export default function Home() {
                 </Badge>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">You Are Not Alone in This Journey</h2>
                 <p className="text-muted-foreground">
-                  Connect with others who understand what you're going through. Our community features include:
+                  Connect with others who understand what you're going through. 
                 </p>
               </div>
               <div className="space-y-4">
@@ -247,9 +247,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Button size="lg" className="font-medium">
+              {/* <Button size="lg" className="font-medium">
                 Join Our Community
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -313,24 +313,24 @@ export default function Home() {
             <div className="space-y-6">
               <div className="space-y-3">
                 <Badge variant="outline" className="bg-secondary/20 text-primary border-secondary">
-                  Join Us Today
+                  Together, We Heal
                 </Badge>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                   Start Your Healing Journey With Support
                 </h2>
+                <p className="text-muted-foreground" >Explore our free resources and connect with others walking a similar path.</p>
                 <p className="text-muted-foreground">
-                  Sign up now to access all our resources, connect with our community, and receive personalized support
-                  throughout your cancer journey.
+                  Helpful tools, emotional support, and inspiration for your cancer journey
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
+              {/* <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="font-medium">
                   Create Free Account
                 </Button>
                 <Button size="lg" variant="outline" className="font-medium">
                   Learn More
                 </Button>
-              </div>
+              </div> */}
             </div>
             <div className="relative">
               <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-primary to-accent blur-md opacity-30"></div>
