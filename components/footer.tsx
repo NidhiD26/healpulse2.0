@@ -126,8 +126,21 @@ export default function Footer() {
 </p> */}
 
           <p className="text-sm text-muted-foreground text-center sm:text-left">
+            
             © {new Date().getFullYear()} HealPulse. All rights reserved. <br className="sm:hidden" />
-            Designed & Developed by{" "}
+            <br />
+            <span>Made with LOVE for cancer warriors </span>
+            {/* <Heart size={14} className="fill-primary text-primary" />
+           for cancer warriors</span>  */}
+
+        
+          </p>
+
+{/* <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} HealPulse. All rights reserved.</p> */}
+
+
+<div className="flex items-center gap-1 text-sm text-muted-foreground">
+             Designed & Developed by{" "}
             <a
               href="https://nidhidinesh.netlify.app/"
               target="_blank"
@@ -136,10 +149,8 @@ export default function Footer() {
             >
               Nidhi Dinesh
             </a>
-          </p>
-
-
-          {/* <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} HealPulse. All rights reserved.</p> */}
+          </div>
+          
 
 
           {/* <div className="flex gap-6 text-sm">
@@ -153,11 +164,7 @@ export default function Footer() {
               Contact Us
             </Link>
           </div> */}
-          <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            <span>Made with</span>
-            <Heart size={14} className="fill-primary text-primary" />
-            <span>for cancer warriors</span>
-          </div>
+          
         </div>
       </div>
     </footer>
