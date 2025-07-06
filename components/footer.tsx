@@ -72,11 +72,11 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Community</h3>
             <ul className="space-y-2">
-              <li>
+              {/* <li>
                 <Link href="/community/talk" className="text-muted-foreground hover:text-primary">
                   Talk to Someone
                 </Link>
-              </li>
+              </li> */}
               <li>
                 {/* <Link href="/community/stories" className="text-muted-foreground hover:text-primary">
                   Survivor Stories
@@ -92,11 +92,11 @@ export default function Footer() {
                   Donate Hair
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/blog" className="text-muted-foreground hover:text-primary">
                   Blog
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -111,8 +111,24 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} HealPulse. All rights reserved.</p>
-          <div className="flex gap-6 text-sm">
+          
+                <p className="text-sm text-muted-foreground">
+  © {new Date().getFullYear()}{" "}
+  <a
+    href="https://nidhidinesh.netlify.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline hover:text-primary transition-colors"
+  >
+    HealPulse
+  </a>
+  . All rights reserved.
+</p>
+
+
+          {/* <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} HealPulse. All rights reserved.</p> */}
+          
+          {/* <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-muted-foreground hover:text-primary">
               Privacy Policy
             </Link>
@@ -122,7 +138,7 @@ export default function Footer() {
             <Link href="/contact" className="text-muted-foreground hover:text-primary">
               Contact Us
             </Link>
-          </div>
+          </div> */}
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
             <span>Made with</span>
             <Heart size={14} className="fill-primary text-primary" />
