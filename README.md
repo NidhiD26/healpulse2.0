@@ -61,3 +61,11 @@ This project is licensed under the **Apache License 2.0** — see the[LICENSE](.
 
 Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to understand how we work together respectfully.
 
+
+## 💬 Share Feedback or Ideas
+
+We'd love to hear your thoughts on HealPulse!
+📝 [Click here to share your feedback or feature ideas](https://forms.gle/QCL9vDrJ9TzQyS5T8)
+
+
+
