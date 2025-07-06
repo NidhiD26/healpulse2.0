@@ -66,9 +66,9 @@ export default function Header() {
                 <NavigationMenuTrigger>Community</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
-                    <ListItem href="/community/talk" title="Talk to Someone">
+                    {/* <ListItem href="/community/talk" title="Talk to Someone">
                       Connect with others who understand your journey
-                    </ListItem>
+                    </ListItem> */}
                     {/* <ListItem href="/community/stories" title="Survivor Stories">
                       Read inspiring stories from cancer survivors
                     </ListItem>
@@ -85,26 +85,26 @@ export default function Header() {
                 <NavigationMenuTrigger>Support</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
-                    <ListItem href="/support/doctors" title="Connect with Doctors">
+                    {/* <ListItem href="/support/doctors" title="Connect with Doctors">
                       Schedule consultations with specialists
-                    </ListItem>
-                    <ListItem href="/support/family" title="Family Resources">
+                    </ListItem> */}
+                    {/* <ListItem href="/support/family" title="Family Resources">
                       Guides for family members supporting patients
-                    </ListItem>
+                    </ListItem> */}
                     <ListItem href="/support/reminders" title="Treatment Reminders">
                       Set up reminders for medications and appointments
                     </ListItem>
-                    <ListItem href="/support/books" title="Recommended Books">
+                    {/* <ListItem href="/support/books" title="Recommended Books">
                       Curated reading list for patients and caregivers
-                    </ListItem>
+                    </ListItem> */}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <div onClick={() => router.push('/blog')}>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blog</NavigationMenuLink>
                 </div>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
             </NavigationMenuList>
           </NavigationMenu>
 
@@ -134,9 +134,9 @@ export default function Header() {
             <Link href="/support" className="px-2 py-1 hover:text-primary">
               Support
             </Link>
-            <Link href="/blog" className="px-2 py-1 hover:text-primary">
+            {/* <Link href="/blog" className="px-2 py-1 hover:text-primary">
               Blog
-            </Link>
+            </Link> */}
             {/* <Button className="w-full">Sign In</Button> */}
           </nav>
         </div>
