@@ -154,6 +154,7 @@ function MeditationContent() {
     <div className="container py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8 space-y-2">
+          
           <h1 className="text-3xl font-bold">Meditation & Healing Music</h1>
           <p className="text-muted-foreground">
             Discover guided meditation and healing music to support your mental wellbeing during your cancer journey.
@@ -172,9 +173,9 @@ function MeditationContent() {
             <div className="grid gap-6">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold">Featured Tracks</h2>
-                <Button variant="ghost" size="sm">
+                {/* <Button variant="ghost" size="sm">
                   View All
-                </Button>
+                </Button> */}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -29,7 +29,8 @@
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.2.0"
+    "tailwind-merge": "^3.2.0",
+    "yet-another-react-lightbox": "^3.24.0"
   },
   "devDependencies": {
     "@radix-ui/react-toast": "^1.2.11",
