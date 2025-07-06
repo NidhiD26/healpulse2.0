@@ -79,14 +79,14 @@ export default function AffirmationSection() {
                   <Sparkles className="h-4 w-4" />
                   New Affirmation
                 </Button>
-                <Button
+                {/* <Button
                   onClick={toggleNotifications}
                   variant={notificationsEnabled ? "default" : "outline"}
                   className="gap-2"
                 >
                   <Bell className="h-4 w-4" />
                   {notificationsEnabled ? "Notifications On" : "Enable Daily Affirmations"}
-                </Button>
+                </Button> */}
               </div>
             </CardContent>
           </Card>
