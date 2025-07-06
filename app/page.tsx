@@ -92,7 +92,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
             {/* <FeatureCard
               icon={<MessageCircle className="h-10 w-10 text-primary" />}
               title="Talk to Someone"
@@ -106,25 +106,25 @@ export default function Home() {
               link="/resources/affirmations"
             /> */}
             <FeatureCard
-              icon={<Bell className="h-10 w-10 text-primary" />}
+              icon={<Bell className="h-12 w-12 text-primary" />}
               title="Helpful Reminders"
               description="Set up reminders for medications, appointments, and treatments."
               link="/support/reminders"
             />
             <FeatureCard
-              icon={<Utensils className="h-10 w-10 text-primary" />}
+              icon={<Utensils className="h-12 w-12 text-primary" />}
               title="Nutrition Guidance"
               description="Access personalized nutrition charts and diet plans for cancer patients."
               link="/resources/nutrition"
             />
             <FeatureCard
-              icon={<Music className="h-10 w-10 text-primary" />}
+              icon={<Music className="h-12 w-12 text-primary" />}
               title="Meditation & Music"
               description="Explore healing music and guided meditation sessions for relaxation."
               link="/resources/meditation"
             />
             {/* <FeatureCard
-              icon={<Video className="h-10 w-10 text-primary" />}
+              icon={<Video className="h-13 w-13 text-primary" />}
               title="Survivor Stories"
               description="Watch motivational videos and read stories from cancer survivors."
               link="/community/stories"
