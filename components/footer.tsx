@@ -111,8 +111,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          
-                <p className="text-sm text-muted-foreground">
+
+          {/* <p className="text-sm text-muted-foreground">
   © {new Date().getFullYear()}{" "}
   <a
     href="https://nidhidinesh.netlify.app/"
@@ -123,11 +123,25 @@ export default function Footer() {
     HealPulse
   </a>
   . All rights reserved.
-</p>
+</p> */}
+
+          <p className="text-sm text-muted-foreground text-center sm:text-left">
+            © {new Date().getFullYear()} HealPulse. All rights reserved. <br className="sm:hidden" />
+            Designed & Developed by{" "}
+            <a
+              href="https://nidhidinesh.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-primary transition-colors duration-200"
+            >
+              Nidhi Dinesh
+            </a>
+          </p>
 
 
           {/* <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} HealPulse. All rights reserved.</p> */}
-          
+
+
           {/* <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-muted-foreground hover:text-primary">
               Privacy Policy
