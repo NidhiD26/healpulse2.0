@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Facebook, Instagram, Twitter, Youtube, Heart } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Facebook, Instagram, Twitter, Youtube, Heart } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -16,7 +16,8 @@ export default function Footer() {
               <span className="font-bold text-xl">HealPulse</span>
             </div>
             <p className="text-muted-foreground">
-              Supporting cancer patients and their families through every step of the journey.
+              Supporting cancer patients and their families through every step
+              of the journey.
             </p>
             <div className="flex space-x-4">
               {/* <Link href="#" className="text-muted-foreground hover:text-primary">
@@ -42,17 +43,26 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/resources/nutrition" className="text-muted-foreground hover:text-primary">
+                <Link
+                  href="/resources/nutrition"
+                  className="text-muted-foreground hover:text-primary"
+                >
                   Nutrition Charts
                 </Link>
               </li>
               <li>
-                <Link href="/resources/meditation" className="text-muted-foreground hover:text-primary">
+                <Link
+                  href="/resources/meditation"
+                  className="text-muted-foreground hover:text-primary"
+                >
                   Meditation & Music
                 </Link>
               </li>
               <li>
-                <Link href="/resources/exercises" className="text-muted-foreground hover:text-primary">
+                <Link
+                  href="/resources/exercises"
+                  className="text-muted-foreground hover:text-primary"
+                >
                   Exercises
                 </Link>
               </li>
@@ -88,7 +98,10 @@ export default function Footer() {
                 </Link> */}
               </li>
               <li>
-                <Link href="/community/donate" className="text-muted-foreground hover:text-primary">
+                <Link
+                  href="/donate"
+                  className="text-muted-foreground hover:text-primary"
+                >
                   Donate Hair
                 </Link>
               </li>
@@ -102,16 +115,26 @@ export default function Footer() {
 
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Stay Inspired</h3>
-            <p className="text-muted-foreground">Subscribe for daily affirmations and updates</p>
-            <form action="https://formsubmit.co/dineshnidhi2605@gmail.com" method="POST" className="flex gap-2">
-              <Input type="email" placeholder="Your email" id="email" name="email" />
+            <p className="text-muted-foreground">
+              Subscribe for daily affirmations and updates
+            </p>
+            <form
+              action="https://formsubmit.co/dineshnidhi2605@gmail.com"
+              method="POST"
+              className="flex gap-2"
+            >
+              <Input
+                type="email"
+                placeholder="Your email"
+                id="email"
+                name="email"
+              />
               <Button type="submit">Subscribe</Button>
             </form>
           </div>
         </div>
 
         <div className="border-t mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-
           {/* <p className="text-sm text-muted-foreground">
   © {new Date().getFullYear()}{" "}
   <a
@@ -126,17 +149,14 @@ export default function Footer() {
 </p> */}
 
           <p className="text-sm text-muted-foreground text-center sm:text-left">
-
-            © {new Date().getFullYear()} HealPulse. All rights reserved. <br className="sm:hidden" />
+            © {new Date().getFullYear()} HealPulse. All rights reserved.{" "}
+            <br className="sm:hidden" />
             <br />
-            <span>Made with LOVE for cancer warriors </span>
-
             {/* <Heart size={14} className="fill-primary text-primary" />
            for cancer warriors</span>  */}
-           </p>
+          </p>
 
           {/* <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} HealPulse. All rights reserved.</p> */}
-
 
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
             Designed & Developed by{" "}
@@ -150,8 +170,6 @@ export default function Footer() {
             </a>
           </div>
 
-
-
           {/* <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-muted-foreground hover:text-primary">
               Privacy Policy
@@ -163,9 +181,8 @@ export default function Footer() {
               Contact Us
             </Link>
           </div> */}
-
         </div>
       </div>
     </footer>
-  )
+  );
 }

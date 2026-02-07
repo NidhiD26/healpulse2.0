@@ -9,6 +9,7 @@ Thank you for taking the time to responsibly disclose any vulnerabilities or sec
 If you believe you’ve found a security vulnerability in HealPulse, **please report it directly and privately** to the maintainer:
 
 -🔗 [Report Security Issue](https://forms.gle/8c7h6mnGE88QKgZ69)
+
 - 📆 Expected response time: **within 2–6 business days**
 
 **Please do not create public issues or pull requests** related to security matters. Private reporting ensures that the vulnerability can be addressed before it is publicly disclosed.
@@ -46,6 +47,3 @@ This policy does **not cover** third-party services or tools used by the platfor
 ## 🧠 Reminder
 
 Security is a shared responsibility. Thank you for helping make **HealPulse** a safer space for cancer patients, families, and caregivers around the world. 💙
-
-
-

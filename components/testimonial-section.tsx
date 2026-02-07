@@ -1,6 +1,6 @@
-import Image from "next/image"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Quote } from "lucide-react"
+import Image from "next/image";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Quote } from "lucide-react";
 
 export default function TestimonialSection() {
   const testimonials = [
@@ -9,31 +9,34 @@ export default function TestimonialSection() {
         "This platform has been my lifeline during treatment. The meditation resources and community support made all the difference in my journey.",
       name: "Sarah J.",
       role: "Breast Cancer Survivor",
-      avatar: "/images/healing/sarah.webp?height=100&width=100",
+      avatar: "/images/healing/sarah.webp",
     },
     {
       quote:
         "The nutrition guides helped me maintain my strength during chemo. And connecting with others who understood exactly what I was going through was invaluable.",
       name: "Michael T.",
       role: "Lymphoma Survivor",
-      avatar: "/images/blog/michael chen.jpeg?height=100&width=100",
+      avatar: "/images/blog/michael chen.jpeg",
     },
     {
       quote:
         "As a caregiver for my mother, the family support resources taught me how to be there for her in ways I wouldn't have known otherwise.",
       name: "Priya K.",
       role: "Caregiver",
-      avatar: "/images/blog/priya.jpg?height=100&width=100",
+      avatar: "/images/blog/priya.jpg",
     },
-  ]
+  ];
 
   return (
     <section className="py-16 md:py-24 items-center flex justify-center">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-3 mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Stories from Our Community</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+            Stories from Our Community
+          </h2>
           <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-            Hear from those who have found support and strength through our platform
+            Hear from those who have found support and strength through our
+            platform
           </p>
         </div>
 
@@ -52,11 +55,14 @@ export default function TestimonialSection() {
                   alt={testimonial.name}
                   width={50}
                   height={50}
-                  className="rounded-full"
+                  className="rounded-full object-cover"
+                  style={{ height: "auto" }}
                 />
                 <div>
                   <h4 className="font-semibold">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {testimonial.role}
+                  </p>
                 </div>
               </CardFooter>
             </Card>
@@ -64,5 +70,5 @@ export default function TestimonialSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

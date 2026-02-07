@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import React from "react"
+import React from "react";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/mode-toggle"
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,30 +14,35 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react"
-import { useRouter } from 'next/navigation';
-import Image from "next/image"
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur p-2 supports-[backdrop-filter]:bg-background/60 grid place-items-center">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold"><Image
-                              src="/images/logo.jpg"
-                              alt="Cancer support community"
-                              width={800}
-                              height={600}
-                              className="w-full h-auto object-cover rounded-lg"
-                            /></span>
+        <Link
+          href="/"
+          className="flex items-center gap-3 hover:opacity-90 transition-opacity"
+        >
+          <div className="h-10 w-10 rounded-xl bg-primary overflow-hidden flex items-center justify-center shadow-lg shadow-primary/20">
+            <Image
+              src="/images/logo.jpg"
+              alt="HealPulse Logo"
+              width={40}
+              height={40}
+              className="object-cover"
+            />
           </div>
-          <span className="font-bold text-xl">HealPulse</span>
+          <span className="font-extrabold text-2xl tracking-tighter">
+            HealPulse
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
@@ -47,7 +52,10 @@ export default function Header() {
                 <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
-                    <ListItem href="/resources/nutrition" title="Nutrition Charts">
+                    <ListItem
+                      href="/resources/nutrition"
+                      title="Nutrition Charts"
+                    >
                       Personalized nutrition guides for cancer patients
                     </ListItem>
                     <ListItem href="/resources/meditation" title="Meditation">
@@ -63,42 +71,18 @@ export default function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Community</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
-                    {/* <ListItem href="/community/talk" title="Talk to Someone">
-                      Connect with others who understand your journey
-                    </ListItem> */}
-                    {/* <ListItem href="/community/stories" title="Survivor Stories">
-                      Read inspiring stories from cancer survivors
-                    </ListItem>
-                    <ListItem href="/community/social" title="Social Network">
-                      Join our supportive social network
-                    </ListItem> */}
-                    <ListItem href="/community/donate" title="Donate Hair">
-                      Learn how to donate hair for cancer patients
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
+                <NavigationMenuLink asChild>
+                  <Link href="/donate" className={navigationMenuTriggerStyle()}>
+                    Donate
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Support</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
-                    {/* <ListItem href="/support/doctors" title="Connect with Doctors">
-                      Schedule consultations with specialists
-                    </ListItem> */}
-                    {/* <ListItem href="/support/family" title="Family Resources">
-                      Guides for family members supporting patients
-                    </ListItem> */}
-                    <ListItem href="/support/reminders" title="Treatment Reminders">
-                      Set up reminders for medications and appointments
-                    </ListItem>
-                    {/* <ListItem href="/support/books" title="Recommended Books">
-                      Curated reading list for patients and caregivers
-                    </ListItem> */}
-                  </ul>
-                </NavigationMenuContent>
+                <NavigationMenuLink asChild>
+                  <Link href="/reminders" className={navigationMenuTriggerStyle()}>
+                    Reminders
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               {/* <NavigationMenuItem>
                 <div onClick={() => router.push('/blog')}>
@@ -116,8 +100,16 @@ export default function Header() {
 
         <div className="md:hidden flex items-center gap-2">
           <ModeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
       </div>
@@ -125,14 +117,26 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden container py-4 bg-background items-center flex justify-center">
           <nav className="flex flex-col space-y-4">
-            <Link href="/resources" className="px-2 py-1 hover:text-primary">
+            <Link
+              href="/resources/nutrition"
+              className="px-2 py-1 hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Resources
             </Link>
-            <Link href="/community" className="px-2 py-1 hover:text-primary">
-              Community
+            <Link
+              href="/donate"
+              className="px-2 py-1 hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Donate
             </Link>
-            <Link href="/support" className="px-2 py-1 hover:text-primary">
-              Support
+            <Link
+              href="/reminders"
+              className="px-2 py-1 hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Reminders
             </Link>
             {/* <Link href="/blog" className="px-2 py-1 hover:text-primary">
               Blog
@@ -142,10 +146,14 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }
 
-const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
+interface ListItemProps extends React.ComponentPropsWithoutRef<"a"> {
+  title: string;
+}
+
+const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
   ({ className, title, children, ...props }, ref) => {
     return (
       <li>
@@ -159,11 +167,13 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
             {...props}
           >
             <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              {children}
+            </p>
           </a>
         </NavigationMenuLink>
       </li>
-    )
+    );
   },
-)
-ListItem.displayName = "ListItem"
+);
+ListItem.displayName = "ListItem";

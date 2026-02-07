@@ -5,8 +5,8 @@ HealPulse is a heartfelt web-based support platform built to assist individuals 
 This platform was created with empathy and simplicity at its core — empowering patients through **positive affirmations, healing content, and self-care tools** that are accessible anytime.
 
 ## 🌐 Live Demo
-🔗 [Visit HealPulse](https://healpulse2-0.vercel.app)
 
+🔗 [Visit HealPulse](https://healpulse2-0.vercel.app)
 
 ## 💡 Features
 
@@ -31,8 +31,6 @@ This platform was created with empathy and simplicity at its core — empowering
 - 📚 **Resource Hub**  
   A centralized space to find emotional support tools, wellness tips, and survivor stories.
 
-
-
 ## 🚀 Getting Started
 
 To run the project locally:
@@ -56,16 +54,11 @@ npm run dev
 
 This project is licensed under the **Apache License 2.0** — see the[LICENSE](./LICENSE) file for details.
 
-
 ## 🤝 Code of Conduct
 
 Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to understand how we work together respectfully.
-
 
 ## 💬 Share Feedback or Ideas
 
 We'd love to hear your thoughts on HealPulse!
 📝 [Click here to share your feedback or feature ideas](https://forms.gle/QCL9vDrJ9TzQyS5T8)
-
-
-

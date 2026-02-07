@@ -24,3 +24,4 @@ We’re happy to accept contributions in the following areas:
 2. **Clone** your fork to your local machine:
    ```bash
    git clone https://github.com/NidhiD26/healpulse2.0.git
+   ```
