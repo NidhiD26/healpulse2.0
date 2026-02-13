@@ -28,7 +28,6 @@ Examples of unacceptable behavior include:
 
 ---
 
-
 ## Enforcement
 
 Project maintainers are responsible for enforcing the Code of Conduct and may take appropriate actions such as:

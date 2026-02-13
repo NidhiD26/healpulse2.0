@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Sparkles, Bell } from "lucide-react"
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Sparkles, Bell } from "lucide-react";
 
 export default function AffirmationSection() {
-  const [currentAffirmation, setCurrentAffirmation] = useState("")
-  const [notificationsEnabled, setNotificationsEnabled] = useState(false)
+  const [currentAffirmation, setCurrentAffirmation] = useState("");
+  const [notificationsEnabled, setNotificationsEnabled] = useState(false);
 
   const affirmations = [
     "You are stronger than you know. Your body is fighting, and you are not alone.",
@@ -32,50 +32,57 @@ export default function AffirmationSection() {
     "I trust my body and mind to continue healing each day.",
     "I’ve faced fear and found my inner warrior.",
     "My future is bright, and I welcome it with open arms.",
-  ]
+  ];
 
   useEffect(() => {
-    
-    const randomIndex = Math.floor(Math.random() * affirmations.length)
-    setCurrentAffirmation(affirmations[randomIndex])
-  }, [])
+    const randomIndex = Math.floor(Math.random() * affirmations.length);
+    setCurrentAffirmation(affirmations[randomIndex]);
+  }, []);
 
   const getNewAffirmation = () => {
-    let newIndex
+    let newIndex;
     do {
-      newIndex = Math.floor(Math.random() * affirmations.length)
-    } while (affirmations[newIndex] === currentAffirmation)
+      newIndex = Math.floor(Math.random() * affirmations.length);
+    } while (affirmations[newIndex] === currentAffirmation);
 
-    setCurrentAffirmation(affirmations[newIndex])
-  }
+    setCurrentAffirmation(affirmations[newIndex]);
+  };
 
   const toggleNotifications = () => {
-    
-    setNotificationsEnabled(!notificationsEnabled)
-  }
+    setNotificationsEnabled(!notificationsEnabled);
+  };
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-r from-primary/5 via-secondary/10 to-accent/5 items-center flex justify-center">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-3 mb-12">
-          <div className="flex justify-center mb-4">
-            <Sparkles className="h-10 w-10 text-primary" />
+          <div className="flex justify-center mb-6">
+            <div className="p-4 bg-primary/10 rounded-full float-animation">
+              <Sparkles className="h-10 w-10 text-primary" />
+            </div>
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Daily Affirmations</h2>
-          <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+            Daily <span className="gradient-text">Affirmations</span>
+          </h2>
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
             Positive affirmations to keep you motivated and focused on healing
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <Card className="border-none shadow-lg bg-gradient-to-r from-primary/10 to-accent/10">
-            <CardContent className="pt-6 pb-6 px-6 md:px-10">
-              <blockquote className="text-xl md:text-2xl text-center italic font-medium my-6">
+          <Card className="glass border-none shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-accent" />
+            <CardContent className="pt-12 pb-10 px-6 md:px-16">
+              <blockquote className="text-2xl md:text-3xl text-center italic font-light leading-relaxed my-6 text-foreground/90">
                 "{currentAffirmation}"
               </blockquote>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                <Button onClick={getNewAffirmation} variant="outline" className="gap-2">
+                <Button
+                  onClick={getNewAffirmation}
+                  variant="outline"
+                  className="gap-2"
+                >
                   <Sparkles className="h-4 w-4" />
                   New Affirmation
                 </Button>
@@ -93,5 +100,5 @@ export default function AffirmationSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

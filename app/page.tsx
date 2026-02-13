@@ -1,8 +1,15 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Users,
   BookOpen,
@@ -19,10 +26,11 @@ import {
   Share2,
   Wind,
   Activity,
-} from "lucide-react"
-import TestimonialSection from "@/components/testimonial-section"
-import AffirmationSection from "@/components/affirmation-section"
-import ImmunotherapySection from "@/components/ImmunotherapySection"
+  ArrowRight,
+} from "lucide-react";
+import TestimonialSection from "@/components/testimonial-section";
+import AffirmationSection from "@/components/affirmation-section";
+import ImmunotherapySection from "@/components/ImmunotherapySection";
 
 export default function Home() {
   return (
@@ -32,14 +40,19 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-6">
               <div className="space-y-3">
-                <Badge variant="outline" className="bg-secondary/20 text-primary border-secondary">
+                <Badge
+                  variant="outline"
+                  className="bg-secondary/20 text-primary border-secondary"
+                >
                   Supporting Cancer Warriors
                 </Badge>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                  Your Journey to <span className="gradient-text">Healing</span> Starts Here
+                  Your Journey to <span className="gradient-text">Healing</span>{" "}
+                  Starts Here
                 </h1>
                 <p className="text-muted-foreground md:text-xl">
-                  A supportive community and comprehensive resource hub for cancer patients and their families.
+                  A supportive community and comprehensive resource hub for
+                  cancer patients and their families.
                 </p>
               </div>
               {/* <div className="flex flex-col sm:flex-row gap-3">
@@ -86,13 +99,16 @@ export default function Home() {
       <section className="py-16 md:py-24 items-center flex justify-center">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-3 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">How We Support You</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              How We Support You
+            </h2>
             <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-              Comprehensive resources and community support designed specifically for cancer patients
+              Comprehensive resources and community support designed
+              specifically for cancer patients
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* <FeatureCard
               icon={<MessageCircle className="h-10 w-10 text-primary" />}
               title="Talk to Someone"
@@ -109,7 +125,7 @@ export default function Home() {
               icon={<Bell className="h-12 w-12 text-primary" />}
               title="Helpful Reminders"
               description="Set up reminders for medications, appointments, and treatments."
-              link="/support/reminders"
+              link="/reminders"
             />
             <FeatureCard
               icon={<Utensils className="h-12 w-12 text-primary" />}
@@ -139,7 +155,7 @@ export default function Home() {
               icon={<Scissors className="h-10 w-10 text-primary" />}
               title="Donate Hair"
               description="Learn how to donate hair for wigs and support other cancer patients."
-              link="/community/donate"
+              link="/donate"
             />
             {/* <FeatureCard
               icon={<BookMarked className="h-10 w-10 text-primary" />}
@@ -152,12 +168,12 @@ export default function Home() {
       </section>
 
       <AffirmationSection />
-      
+
       <section className="py-16 md:py-24 bg-muted/30 items-center flex justify-center">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-row-2 gap-4">
                 <div className="space-y-4">
                   <div className="overflow-hidden rounded-lg">
                     <Image
@@ -202,12 +218,17 @@ export default function Home() {
             </div>
             <div className="space-y-6 order-1 lg:order-2">
               <div className="space-y-3">
-                <Badge variant="outline" className="bg-secondary/20 text-primary border-secondary">
+                <Badge
+                  variant="outline"
+                  className="bg-secondary/20 text-primary border-secondary"
+                >
                   Our Community
                 </Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">You Are Not Alone in This Journey</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  You Are Not Alone in This Journey
+                </h2>
                 <p className="text-muted-foreground">
-                  Connect with others who understand what you're going through. 
+                  Connect with others who understand what you're going through.
                 </p>
               </div>
               <div className="space-y-4">
@@ -218,8 +239,8 @@ export default function Home() {
                   <div>
                     <h3 className="font-semibold">Talk to Someone</h3>
                     <p className="text-muted-foreground">
-                      Connect with others in a safe, anonymous environment similar to Omegle but specifically for cancer
-                      patients.
+                      Connect with others in a safe, anonymous environment
+                      similar to Omegle but specifically for cancer patients.
                     </p>
                   </div>
                 </div>
@@ -230,8 +251,8 @@ export default function Home() {
                   <div>
                     <h3 className="font-semibold">Social Network</h3>
                     <p className="text-muted-foreground">
-                      Join our dedicated social platform to share experiences, ask questions, and build lasting
-                      connections.
+                      Join our dedicated social platform to share experiences,
+                      ask questions, and build lasting connections.
                     </p>
                   </div>
                 </div>
@@ -242,7 +263,8 @@ export default function Home() {
                   <div>
                     <h3 className="font-semibold">Support Groups</h3>
                     <p className="text-muted-foreground">
-                      Participate in moderated group sessions focused on specific cancer types or treatment stages.
+                      Participate in moderated group sessions focused on
+                      specific cancer types or treatment stages.
                     </p>
                   </div>
                 </div>
@@ -258,9 +280,12 @@ export default function Home() {
       <section className="py-16 md:py-24 items-center flex justify-center">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-3 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Comprehensive Resources</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Comprehensive Resources
+            </h2>
             <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-              Everything you need to navigate your cancer journey with confidence
+              Everything you need to navigate your cancer journey with
+              confidence
             </p>
           </div>
 
@@ -312,15 +337,22 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-6">
               <div className="space-y-3">
-                <Badge variant="outline" className="bg-secondary/20 text-primary border-secondary">
+                <Badge
+                  variant="outline"
+                  className="bg-secondary/20 text-primary border-secondary"
+                >
                   Together, We Heal
                 </Badge>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                   Start Your Healing Journey With Support
                 </h2>
-                <p className="text-muted-foreground" >Explore our free resources and connect with others walking a similar path.</p>
                 <p className="text-muted-foreground">
-                  Helpful tools, emotional support, and inspiration for your cancer journey
+                  Explore our free resources and connect with others walking a
+                  similar path.
+                </p>
+                <p className="text-muted-foreground">
+                  Helpful tools, emotional support, and inspiration for your
+                  cancer journey
                 </p>
               </div>
               {/* <div className="flex flex-col sm:flex-row gap-3">
@@ -348,31 +380,59 @@ export default function Home() {
         </div>
       </section>
     </>
-  )
+  );
 }
 
-function FeatureCard({ icon, title, description, link }:{icon:any, title:any, description:any, link:any }) {
+function FeatureCard({
+  icon,
+  title,
+  description,
+  link,
+}: {
+  icon: any;
+  title: any;
+  description: any;
+  link: any;
+}) {
   return (
-    <Card className="feature-card border-none shadow-md">
-      <CardHeader>
-        <div className="flex items-center gap-2">
+    <Card className="feature-card glass overflow-hidden flex flex-col h-full">
+      <CardHeader className="pb-2">
+        <div className="p-3 bg-primary/10 rounded-2xl w-fit mb-4 group-hover:bg-primary/20 transition-colors">
           {icon}
-          <CardTitle>{title}</CardTitle>
         </div>
+        <CardTitle className="text-xl">{title}</CardTitle>
       </CardHeader>
-      <CardContent>
-        <CardDescription className="text-base">{description}</CardDescription>
+      <CardContent className="flex-grow">
+        <CardDescription className="text-base text-muted-foreground/90">
+          {description}
+        </CardDescription>
       </CardContent>
       <CardFooter>
-        <Link href={link} className="text-primary hover:underline font-medium">
-          Learn more →
-        </Link>
+        <Button
+          variant="ghost"
+          className="p-0 text-primary hover:text-primary/80 group-hover:translate-x-1 transition-transform"
+          asChild
+        >
+          <Link href={link}>
+            Explore Resource <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
-function ResourceCard({ icon, title, description, link }:{icon:any, title:any, description:any, link:any }) {
+function ResourceCard({
+  icon,
+  title,
+  description,
+  link,
+}: {
+  icon: any;
+  title: any;
+  description: any;
+  link: any;
+}) {
   return (
     <Link href={link} className="block group">
       <Card className="h-full transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1 border-none shadow-md">
@@ -386,9 +446,11 @@ function ResourceCard({ icon, title, description, link }:{icon:any, title:any, d
           <CardDescription className="text-base">{description}</CardDescription>
         </CardContent>
         <CardFooter>
-          <span className="text-primary group-hover:underline font-medium">Explore →</span>
+          <span className="text-primary group-hover:underline font-medium">
+            Explore →
+          </span>
         </CardFooter>
       </Card>
     </Link>
-  )
+  );
 }
